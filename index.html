@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Legend KET Exam Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+        <div class="start-container">
+            <h1>Coding Legend KET</h1>
+            <p>Online Examination System</p>
+            <div class="exam-info">
+                <div class="info-item">
+                    <span class="label">Total Questions:</span>
+                    <span class="value">20</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duration:</span>
+                    <span class="value">30 Minutes</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Question Set:</span>
+                    <span class="value" id="assignedSet">-</span>
+                </div>
+            </div>
+            <button id="startBtn" class="btn-primary">Start Exam</button>
+        </div>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="examScreen" class="screen">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="exam-title">Coding Legend KET Exam</div>
+            <div class="timer" id="timer">30:00</div>
+        </div>
+
+        <div class="exam-container">
+            <!-- Question Area -->
+            <div class="question-area">
+                <div class="question-header">
+                    <span id="questionNumber">Question 1</span>
+                    <span class="question-set" id="currentSet">Set A</span>
+                </div>
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+                <div class="question-actions">
+                    <button id="prevBtn" class="btn-secondary">Previous</button>
+                    <button id="markBtn" class="btn-mark">Mark for Review</button>
+                    <button id="nextBtn" class="btn-secondary">Next</button>
+                    <button id="submitBtn" class="btn-submit">Submit Exam</button>
+                </div>
+            </div>
+
+            <!-- Navigation Panel -->
+            <div class="nav-panel">
+                <div class="nav-header">Question Navigation</div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-box not-visited"></span>
+                        <span>Not Visited</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box answered"></span>
+                        <span>Answered</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box marked"></span>
+                        <span>Marked</span>
+                    </div>
+                </div>
+                <div class="nav-grid" id="navGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="screen">
+        <div class="result-container">
+            <h1>Exam Completed!</h1>
+            <div class="result-summary">
+                <div class="result-card">
+                    <div class="result-value" id="totalQuestions">0</div>
+                    <div class="result-label">Total Questions</div>
+                </div>
+                <div class="result-card correct">
+                    <div class="result-value" id="correctAnswers">0</div>
+                    <div class="result-label">Correct</div>
+                </div>
+                <div class="result-card wrong">
+                    <div class="result-value" id="wrongAnswers">0</div>
+                    <div class="result-label">Wrong</div>
+                </div>
+                <div class="result-card score">
+                    <div class="result-value" id="scorePercentage">0%</div>
+                    <div class="result-label">Score</div>
+                </div>
+            </div>
+            <div class="review-section" id="reviewSection"></div>
+            <button id="restartBtn" class="btn-primary">Take Another Exam</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
